@@ -1,15 +1,16 @@
 /* --- ОСНОВНІ НАЛАШТУВАННЯ --- */
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
-    font-family: 'Myriad Pro', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e7d792; /* Ваш пісочний колір */
-    color: #2c1a1a; /* Темно-коричневий текст для контрасту */
+    background-color: #e7d792; /* Основний пісочний фон */
+    color: #2c1a1a; /* Темно-коричневий текст */
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .container {
@@ -18,17 +19,15 @@ body {
     padding: 0 20px;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+a { text-decoration: none; transition: 0.3s; }
+img { max-width: 100%; display: block; }
 
-/* --- ШАПКА ТА НАВІГАЦІЯ --- */
+/* --- ШАПКА (HEADER) --- */
 header {
-    background-color: #462828; /* Ваш темно-коричневий колір */
-    padding: 15px 0;
-    color: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background-color: #462828; /* Темний шоколад */
+    padding: 20px 0;
+    color: #e7d792;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -36,184 +35,146 @@ header {
 
 .header-container {
     display: flex;
-    flex-direction: column; /* Розміщує елементи стовпчиком (лого зверху, меню знизу) */
-    align-items: center;    /* Вирівнює їх по центру по горизонталі */
+    flex-direction: column; /* Центрування: лого зверху, меню знизу */
+    align-items: center;
     justify-content: center;
-    text-align: center;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    color: #e7d792; /* Логотип у колір фону */
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 28px;
+    font-weight: 700;
+    color: #e7d792;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
 }
 
 .logo img {
-    height: 50px;
+    height: 60px;
     margin-right: 15px;
-    
-}
-/* Додайте або оновіть цей стиль для nav, щоб був відступ між лого і меню */
-nav {
-    margin-top: 15px; /* Відступ зверху, щоб меню не прилипало до логотипу */
-    width: 100%;      /* Щоб меню займало всю ширину */
-    display: flex;
-    justify-content: center; /* Центруємо саме меню */
+    border-radius: 50%;
+    border: 3px solid #e7d792;
+    background: #fff;
 }
 
-/* Переконайтеся, що список меню теж по центру */
+/* --- НАВІГАЦІЯ --- */
+nav { width: 100%; display: flex; justify-content: center; }
+
 nav ul {
     list-style: none;
     display: flex;
     padding: 0;
     margin: 0;
-    justify-content: center; /* Центрування пунктів меню */
-    flex-wrap: wrap; /* Щоб на телефонах меню гарно переносилося */
+    flex-wrap: wrap;
+    justify-content: center;
 }
-nav ul li {
-    margin-left: 20px;
-    position: relative;
-}
+
+nav ul li { margin: 0 15px; position: relative; }
 
 nav ul li a {
     color: #fff;
+    font-size: 16px;
     font-weight: 500;
-    transition: 0.3s;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
 }
 
 nav ul li a:hover, nav ul li a.active {
-    color: #e7d792; /* Підсвітка активних пунктів */
+    color: #e7d792;
+    border-bottom: 2px solid #e7d792;
 }
 
 /* Випадаюче меню */
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #5e3b3b; /* Трохи світліший коричневий */
-    min-width: 180px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
-    top: 100%;
-    left: 0;
-    padding: 0;
-    border-radius: 0 0 5px 5px;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown-content li {
-    margin: 0;
-}
-
-.dropdown-content a {
-    padding: 12px 16px;
-    display: block;
-    font-size: 14px;
-    border-bottom: 1px solid #462828;
-}
-
-.dropdown-content a:hover {
-    background-color: #462828;
-    color: #e7d792;
-}
-
-/* --- СЛАЙДЕР (КАРУСЕЛЬ) --- */
-.slider-container {
-    position: relative;
-    max-width: 100%;
-    height: 500px;
-    overflow: hidden;
-    margin-bottom: 40px;
-    border-bottom: 5px solid #462828;
-}
-
-.slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    height: 100%;
-}
-
-.slide {
-    min-width: 100%;
-    position: relative;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.7); /* Трохи затемнюємо картинки */
-}
-
-.slide-text {
-    position: absolute;
-    top: 50%;
+    background-color: #5e3b3b;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    z-index: 100;
+    top: 30px;
     left: 50%;
-    transform: translate(-50%, -50%);
-    color: #e7d792; /* Пісочний текст на слайдах */
-    font-size: 3rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
-    text-align: center;
-    width: 80%;
-}
-
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(70, 40, 40, 0.7); /* Коричневий напівпрозорий */
-    color: #e7d792;
-    border: none;
-    padding: 16px;
-    cursor: pointer;
-    font-size: 18px;
+    transform: translateX(-50%);
     border-radius: 5px;
+    padding: 5px 0;
 }
-.next { right: 10px; }
-.prev { left: 10px; }
-.prev:hover, .next:hover { background-color: #462828; }
 
-/* --- ОСНОВНИЙ КОНТЕНТ ТА КАРТКИ --- */
-.section {
-    padding: 40px 0;
+.dropdown:hover .dropdown-content { display: block; }
+
+.dropdown-content li { margin: 0; width: 100%; }
+.dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    text-align: center;
+    border-bottom: none;
+}
+.dropdown-content a:hover { background-color: #462828; }
+
+/* --- ГОЛОВНИЙ КОНТЕНТ --- */
+main { flex: 1; padding-top: 20px; }
+
+/* Картки та блоки (Білий фон для читабельності) */
+.content-box, .card {
+    background: #fff8e1; /* Дуже світлий крем */
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(70, 40, 40, 0.1);
+    border: 1px solid rgba(70, 40, 40, 0.1);
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 30px;
+    color: #462828;
     font-size: 2rem;
-    color: #462828; /* Темні заголовки */
+    margin-bottom: 30px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Картки (щоб текст читався на пісочному фоні, робимо картки білими/світлими) */
-.card, .info-section, .it-aggregator, .content-article {
-    background: #fff8e1; /* Дуже світлий кремовий, майже білий */
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(70, 40, 40, 0.15); /* Коричнева тінь */
-    padding: 20px;
-    margin-bottom: 20px;
-    color: #2c1a1a;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.card img {
+    position: relative;
+    display: inline-block;
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
 }
+
+/* --- СЛАЙДЕР --- */
+.slider-container {
+    position: relative;
+    max-width: 100%;
+    height: 450px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    border-bottom: 5px solid #462828;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.slider { display: flex; transition: transform 0.5s ease-in-out; height: 100%; }
+.slide { min-width: 100%; position: relative; }
+.slide img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6); }
+
+.slide-text {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: #e7d792;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    text-align: center;
+    background: rgba(70, 40, 40, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #e7d792;
+}
+
+.prev, .next {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(70, 40, 40, 0.8); color: #e7d792;
+    border: 2px solid #e7d792;
+    padding: 15px; cursor: pointer; font-size: 20px; border-radius: 50%;
+    width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;
+}
+.next { right: 20px; } .prev { left: 20px; }
+.prev:hover, .next:hover { background: #e7d792; color: #462828; border-color: #462828; }
 
 /* --- ВІДЕО --- */
 .video-wrapper {
@@ -221,94 +182,74 @@ nav ul li a:hover, nav ul li a.active {
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    margin-bottom: 20px;
-    border: 3px solid #462828;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    border: 4px solid #462828;
 }
-.video-wrapper iframe {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-}
+.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
 /* --- КНОПКИ --- */
-.center-btn { text-align: center; margin: 30px 0; }
-
 .btn {
     display: inline-block;
-    background: #462828; /* Темно-коричнева кнопка */
-    color: #e7d792; /* Пісочний текст */
-    padding: 12px 25px;
-    border-radius: 5px;
+    background: #462828;
+    color: #e7d792;
+    padding: 12px 30px;
+    border-radius: 30px;
     font-weight: bold;
-    transition: 0.3s;
-    border: 2px solid #462828;
     text-transform: uppercase;
+    border: 2px solid #462828;
+    cursor: pointer;
 }
 
 .btn:hover {
-    background: #5e3b3b;
-    color: #fff;
-    transform: translateY(-2px);
-}
-
-.btn-outline {
     background: transparent;
-    border: 2px solid #462828;
     color: #462828;
 }
 
-.btn-outline:hover {
-    background: #462828;
-    color: #e7d792;
+.center-btn { text-align: center; margin-top: 20px; }
+
+/* --- GRID (Сітка для навичок/карток) --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-/* --- СТИЛІ ДЛЯ СТОРІНКИ "РЕСУРСИ" --- */
-/* Блок з файлами (раніше був синій, тепер під стиль) */
-.blue-box {
-    background: #5e3b3b; /* Світло-коричневий фон */
-    color: #fff; /* Білий текст */
-    padding: 30px;
+.feature-card {
+    background: #fff;
+    padding: 20px;
     border-radius: 10px;
-    border-left: 10px solid #2c1a1a;
-    margin-bottom: 30px;
+    text-align: center;
+    border: 1px solid #ddd;
+    transition: 0.3s;
 }
+.feature-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.feature-card i { font-size: 3rem; color: #462828; margin-bottom: 15px; }
 
-.blue-box h2 {
-    color: #e7d792;
-    margin-top: 0;
-}
-
-/* FAQ (Згортаючий текст) */
+/* --- FAQ та Файли --- */
 details {
-    background-color: #fff8e1; /* Світлий фон */
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 15px;
     overflow: hidden;
-    border: 1px solid #dcc692;
+    border: 1px solid #ccc;
 }
-
 summary {
     padding: 15px;
+    background: #5e3b3b;
+    color: #fff;
     cursor: pointer;
     font-weight: bold;
-    background: #dcc692; /* Темніший пісочний для заголовка питання */
-    color: #462828;
-    position: relative;
-    list-style: none;
 }
+details[open] summary { background: #462828; color: #e7d792; }
+details p { padding: 15px; margin: 0; background: #fff8e1; }
 
-summary::after {
-    content: '+';
-    position: absolute;
-    right: 20px;
-    font-weight: bold;
+/* --- ФУТЕР --- */
+footer {
+    background-color: #462828;
+    color: #e7d792;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: auto;
+    border-top: 5px solid #5e3b3b;
 }
-
-details[open] summary::after { content: '-'; }
-
-details p {
-    padding: 15px;
-    margin: 0;
-    color: #2c1a1a;
