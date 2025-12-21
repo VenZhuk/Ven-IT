@@ -3,73 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сучасні технології та гаджети</title>
+    <title>Ven IT - Ресурси</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="Group 5.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <div class="logo"><img src="Ven IT Logo 5.png" alt="Ven IT Logo"></div>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="Ven IT Logo 5.png" alt="Logo"> Ven IT
+            </a>
             <nav>
                 <ul>
-                    <li><a href="index.html" class="active">Головна</a></li>
-                    <li><a href="#gadgets">Гаджети</a></li>
-                    <li><a href="#innovations">Інновації</a></li>
-                    <li><a href="#contact">Контакти</a></li>
-                    <li><a href="#about.html">Про нас</a></li>
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li class="dropdown">
+                        <a href="resources.html" class="active">Ресурси <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="resources.html#files">Файли</a></li>
+                            <li><a href="resources.html#faq">FAQ</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Сучасні технології та гаджети</h1>
-            <p>Дізнайтеся про майбутнє, яке вже настало</p>
-        </div>
-    </section>
-
     <main class="container">
         
-        <section id="files" class="section blue-box">
-            <h2><i class="fas fa-download"></i> Матеріали для завантаження</h2>
-            <p>Завантажте повний звіт про тренди технологій у форматі PDF або DOCX.</p>
-            <br>
-            <a href="report.docx" download class="btn btn-outline">
-                <i class="fas fa-file-word"></i> Завантажити звіт (.docx)
-            </a>
-            <a href="#" class="btn btn-outline">
-                <i class="fas fa-file-pdf"></i> Завантажити презентацію (.pdf)
-            </a>
-        </section>
-
-        <section id="faq" class="section">
-            <h2 class="section-title">Часті запитання (FAQ)</h2>
-            
-            <div class="accordion">
-                <details class="detail-text">
-                    <summary>Які технології будуть популярні у 2025 році?</summary>
-                    <p>Основними трендами залишаються штучний інтелект (AI), квантові обчислення та розвиток метавсесвіту.</p>
-                </details>
-
-                <details class="detail-text">
-                    <summary>Як встановити Python на macOS чи Windows?</summary>
-                    <p>Найкращий спосіб — використовувати інсталятор з офіційного сайту <a href>python.org або менеджер пакетів Homebrew (`brew install python`).</p>
-                </details>
-
-                <details class="detail-text">
-                    <summary>Де знайти безкоштовні курси з програмування?</summary>
-                    <p>Рекомендуємо платформи Prometheus, Coursera (фільтр Free) та YouTube-канали українських розробників.</p>
-                </details>
+        <section id="files" class="content-box">
+            <h2 class="section-title"><i class="fas fa-file-download"></i> Завантаження</h2>
+            <p>Отримайте доступ до наших матеріалів у зручному форматі.</p>
+            <div class="center-btn">
+                <a href="report.docx" download class="btn">Завантажити звіт (.docx)</a>
             </div>
         </section>
 
+        <section id="faq" class="content-box">
+            <h2 class="section-title">Часті запитання (FAQ)</h2>
+            
+            <details>
+                <summary>Як часто оновлюється інформація?</summary>
+                <p>Ми намагаємося оновлювати контент щотижня, додаючи нові огляди та статті про технології.</p>
+            </details>
+
+            <details>
+                <summary>Чи можу я використовувати матеріали сайту?</summary>
+                <p>Так, ви можете використовувати матеріали для навчання з посиланням на Ven IT.</p>
+            </details>
+
+            <details>
+                <summary>Як зв'язатися з адміністрацією?</summary>
+                <p>Ви можете написати нам на електронну пошту або через соціальні мережі, вказані в футері.</p>
+            </details>
+        </section>
+
     </main>
-    <footer id="contact">
-        <p>© 2025-2026 Vitalii Zhulai: Ven IT. All Rights Reserved.</p>
+
+    <footer>
+        <p>© 2025-2026 Ven IT. Знання доступні кожному. All Rights Reserved</p>
     </footer>
 
 </body>
