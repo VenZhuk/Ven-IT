@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Myriad Pro', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #e7d792; /* Ваш пісочний колір */
@@ -36,8 +36,10 @@ header {
 
 .header-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column; /* Розміщує елементи стовпчиком (лого зверху, меню знизу) */
+    align-items: center;    /* Вирівнює їх по центру по горизонталі */
+    justify-content: center;
+    text-align: center;
 }
 
 .logo {
@@ -51,17 +53,25 @@ header {
 .logo img {
     height: 50px;
     margin-right: 15px;
-    border-radius: 50%;
-    border: 2px solid #e7d792;
+    
+}
+/* Додайте або оновіть цей стиль для nav, щоб був відступ між лого і меню */
+nav {
+    margin-top: 15px; /* Відступ зверху, щоб меню не прилипало до логотипу */
+    width: 100%;      /* Щоб меню займало всю ширину */
+    display: flex;
+    justify-content: center; /* Центруємо саме меню */
 }
 
+/* Переконайтеся, що список меню теж по центру */
 nav ul {
     list-style: none;
     display: flex;
     padding: 0;
     margin: 0;
+    justify-content: center; /* Центрування пунктів меню */
+    flex-wrap: wrap; /* Щоб на телефонах меню гарно переносилося */
 }
-
 nav ul li {
     margin-left: 20px;
     position: relative;
