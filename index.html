@@ -3,48 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сучасні технології та гаджети</title>
+    <title>Ven IT - Головна</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="Group 5.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <div class="logo"><img src="Ven IT Logo 5.png" alt="Ven IT Logo"></div>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="Ven IT Logo 5.png" alt="Logo">
+            </a>
             <nav>
                 <ul>
-                    <li><a href="#" class="active">Головна</a></li>
-                    <li><a href="#gadgets">Гаджети</a></li>
-                    <li><a href="#innovations">Інновації</a></li>
-                    <li><a href="#contact">Контакти</a></li>
-                    <li><a href="#About">Про нас</a></li>
+                    <li><a href="index.html" class="active">Головна</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li class="dropdown">
+                        <a href="resources.html">Ресурси <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="resources.html#files">Файли</a></li>
+                            <li><a href="resources.html#faq">FAQ</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Сучасні технології та гаджети</h1>
-            <p>Дізнайтеся про майбутнє, яке вже настало</p>
-        </div>
-    </section>
-
     <section class="slider-container">
         <div class="slider">
             <div class="slide">
-                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1200" alt="Штучний Інтелект">
-                <div class="slide-text">Штучний Інтелект: Майбутнє вже тут</div>
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200" alt="Tech">
+                <div class="slide-text">Сучасні технології</div>
             </div>
             <div class="slide">
-                <img src="https://images.unsplash.com/photo-1535378437327-1e1a8a4e4832?q=80&w=1200" alt="Кібербезпека">
-                <div class="slide-text">Кібербезпека у цифровому світі</div>
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200" alt="Cyber">
+                <div class="slide-text">Кібербезпека 2025</div>
             </div>
             <div class="slide">
-                <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=1200" alt="VR Технології">
-                <div class="slide-text">Віртуальна реальність для навчання</div>
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200" alt="World">
+                <div class="slide-text">Глобальна мережа</div>
             </div>
         </div>
         <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
@@ -52,22 +51,39 @@
     </section>
 
     <main class="container">
-        <section class="section video-section">
-            <h2 class="section-title">Огляд новинок 2025</h2>
+        <section class="content-box">
+            <h2 class="section-title">Відеоогляд</h2>
             <div class="video-wrapper">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/LXb3EKWsInQ?si=placeholder" 
-                        title="YouTube video player" frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/LXb3EKWsInQ" title="YouTube video" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="center-btn">
-                <a href="resources.html" class="btn">Завантажити матеріали</a>
+                <a href="resources.html" class="btn">Більше матеріалів</a>
+            </div>
+        </section>
+        
+        <section class="grid">
+            <div class="feature-card">
+                <i class="fas fa-microchip"></i>
+                <h3>Інновації</h3>
+                <p>Найновіші процесори та гаджети.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Розробка</h3>
+                <p>Тренди у програмуванні та дизайні.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Безпека</h3>
+                <p>Захист даних у цифрову епоху.</p>
             </div>
         </section>
     </main>
-    <footer id="contact">
-        <p>© 2025-2026 Vitalii Zhulai: Ven IT. All Rights Reserved.</p>
+
+    <footer>
+        <p>© 2025 Ven IT. Знання доступні кожному. All Rights Reserved.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
