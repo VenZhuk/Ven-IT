@@ -210,13 +210,14 @@ main { flex: 1; padding-top: 20px; }
 
 /* Контейнер форми */
 .form-container {
-  max-width: 500px;
+  max-width: 1000px;
   margin: 40px auto;
   padding: 25px;
   border-radius: 16px;
-  background: #ffffff;
+    border: 2px solid #462828;
+  background: #e7d792;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: Lucida Grande;
 }
 
 /* Заголовок */
