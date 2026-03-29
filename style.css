@@ -208,6 +208,70 @@ main { flex: 1; padding-top: 20px; }
 
 .center-btn { text-align: center; margin-top: 20px; }
 
+/* Контейнер форми */
+.form-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Заголовок */
+.form-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Поля */
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+/* Фокус */
+.form-container input:focus,
+.form-container textarea:focus {
+  border-color: #007aff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0,122,255,0.15);
+}
+
+/* Кнопка */
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: #007aff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Hover */
+.form-container button:hover {
+  background: #005fcc;
+}
+
+/* Адаптив */
+@media (max-width: 600px) {
+  .form-container {
+    margin: 20px;
+    padding: 20px;
+  }
+}
+
 /* --- GRID (Сітка для навичок/карток) --- */
 .grid {
     display: grid;
