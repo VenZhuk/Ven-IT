@@ -248,20 +248,21 @@ main { flex: 1; padding-top: 20px; }
 
 /* Кнопка */
 .form-container button {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 12px;
-  background: #007aff;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.2s;
+  display: inline-block;
+    background: #462828;
+    color: #e7d792;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid #462828;
+    cursor: pointer;
 }
 
 /* Hover */
 .form-container button:hover {
-  background: #005fcc;
+  background: transparent;
+    color: #462828;
 }
 
 /* Адаптив */
